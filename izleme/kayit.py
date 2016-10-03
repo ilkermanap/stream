@@ -1,5 +1,7 @@
 from kamera import Kamera
 import cv2
+import time
+import pickle
 
 class Kayit:
     def __init__(self,kamera1 = None):
@@ -21,3 +23,5 @@ class Kayit:
         degisim = gri_onceki - gri_guncel
         cv2.imwrite("degisim%03d.png" % num, degisim)
         self.onceki = self.guncel
+        ts = time.strftime("%Y%m%d-%H%M%S")        
+        return bz2.compress(pickle.dumps([ts,self.guncel]))

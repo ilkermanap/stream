@@ -2,6 +2,7 @@ from kamera import Kamera
 import cv2
 import time
 import pickle
+import bz2
 
 class Kayit:
     def __init__(self,kamera1 = None):
